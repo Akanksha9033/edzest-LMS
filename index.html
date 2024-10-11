@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edzest LMS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for Icons -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        /* Navbar Styling */
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .nav-link:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        /* Sidebar Styling */
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40; /* Dark background for sidebar */
+            color: white;
+            padding: 20px;
+            transition: width 0.3s;
+        }
+        .sidebar.collapsed {
+            width: 80px; /* Collapsed width */
+        }
+        .sidebar.collapsed .nav-link {
+            display: none; /* Hide text in collapsed state */
+        }
+        .sidebar.collapsed .nav-link.icon {
+            display: block; /* Show icons in collapsed state */
+            text-align: center;
+        }
+        .nav-link {
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            background-color: #0056b3;
+        }
+        /* Main Content Area Styling */
+        .video-player {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+        }
+        @media (min-width: 768px) {
+            iframe {
+                height: 500px;
+            }
+        }
+        @media (min-width: 1200px) {
+            iframe {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Edzest LMS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                </li>
+                <!-- Updated Mock Exam link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:3000" target="_blank" rel="noopener noreferrer">Mock Exam</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Container -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Sidebar (Video List) -->
+        <div id="sidebar" class="col-lg-3 col-md-4 col-12 sidebar">
+            <h4 class="text-center">Course Videos</h4>
+            <div class="nav flex-column">
+                <a class="nav-link" onclick="loadVideo('https://www.youtube.com/embed/wn1B8M2Mfa4')">
+                    <i class="fas fa-user-graduate"></i> People Domain Explained
+                </a>
+                <a class="nav-link" onclick="loadVideo('https://www.youtube.com/embed/K4V4kieu4Ko')">
+                    <i class="fas fa-cogs"></i> Process Domain
+                </a>
+                <a class="nav-link" onclick="loadVideo('https://www.youtube.com/embed/nqq6MNyG42I')">
+                    <i class="fas fa-briefcase"></i> Business Environment Domain
+                </a>
+            </div>
+            <button class="btn btn-secondary mt-3" onclick="toggleSidebar()">Toggle Sidebar</button>
+        </div>
+
+        <!-- Main Content Area (Video Player) -->
+        <div class="col-lg-9 col-md-8 col-12 video-player bg-white">
+            <iframe id="videoPlayer" src="https://www.youtube.com/embed/wn1B8M2Mfa4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Button to navigate to the mock exam -->
+<div class="container text-center mt-4">
+    <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start Mock Exam</a>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- Script to change video and toggle sidebar -->
+<script>
+    function loadVideo(videoUrl) {
+        document.getElementById('videoPlayer').src = videoUrl;
+    }
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('collapsed');
+    }
+</script>
+
+</body>
+</html>
