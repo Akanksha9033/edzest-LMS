@@ -84,6 +84,19 @@
             .sidebar.collapsed {
                 transform: translateX(-100%); /* Hide sidebar when collapsed */
             }
+            .sidebar-toggler {
+                padding: 1rem;  /* Increased padding for larger button */
+                font-size: 1.5rem;  /* Larger text size */
+                background-color: #007bff;  /* Standout background color */
+                color: white;  /* Text color */
+                border: none;  /* Remove border */
+                border-radius: 0.5rem;  /* Rounded corners */
+                margin: 3.5rem;  /* Space around button */
+                cursor: pointer;  /* Indicate clickable */
+            }
+            .sidebar-toggler:hover {
+                background-color: #0056b3;  /* Darken background on hover */
+            }
         }
     </style>
 </head>
@@ -132,7 +145,9 @@
                     <i class="fas fa-briefcase"></i> Business Environment Domain
                 </a>
             </div>
-            <button class="btn btn-secondary mt-3" onclick="toggleSidebar()">Toggle Sidebar</button>
+            <button class="sidebar-toggler" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>  <!-- Example icon from Font Awesome -->
+            </button>
         </div>
 
         <!-- Main Content Area (Video Player) -->
