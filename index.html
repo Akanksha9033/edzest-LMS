@@ -88,7 +88,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Courses</a>
                 </li>
-                <!-- Updated Mock Exam link -->
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:3000" target="_blank" rel="noopener noreferrer">Mock Exam</a>
                 </li>
@@ -122,7 +121,7 @@
 
         <!-- Main Content Area (Video Player) -->
         <div class="col-lg-9 col-md-8 col-12 video-player bg-white">
-            <iframe id="videoPlayer" src="https://www.youtube.com/embed/wn1B8M2Mfa4" frameborder="0" allowfullscreen></iframe>
+            <iframe id="videoPlayer" src="https://www.youtube.com/embed/wn1B8M2Mfa4?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </div>
@@ -139,7 +138,7 @@
 <!-- Script to change video and toggle sidebar -->
 <script>
     function loadVideo(videoUrl) {
-        document.getElementById('videoPlayer').src = videoUrl;
+        document.getElementById('videoPlayer').src = videoUrl + "?rel=0&modestbranding=1";
     }
 
     function toggleSidebar() {
