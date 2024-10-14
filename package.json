@@ -21,6 +21,6 @@
   "description": "",
   "devDependencies": {
     "live-server": "^1.2.0",
-    "react-scripts": "^5.0.0" 
+    "react-scripts": "^5.0.1"
   }
 }
